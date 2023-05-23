@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <section id="assignment">
+      <!-- 1) Output your name -->
+      <h2>I am {{my_name}}</h2>
+      <!-- 2) Output your age -->
+      <p> I am {{my_age}} years old</p>
+      <!-- 3) Output your age + 5 -->
+      <p> I will be {{ adding_five_to_age() }} years old in 5 years</p>
+      <!-- 4) Output a random number (0 to 1) -->
+      <p> This is my favorite number {{ get_favorite_number() }} </p>
+      <div>
+        <!-- 5) Display some image you found via Google -->
+        <!--METHOD 1-->
+        <!--<p v-html='get_image()'></p>-->
+        <!--METHOD 2-->
+        <p> This is my favorite movie ...</p>
+        <img v-bind:src="just_the_img_url">
+        <!--<img src={{"SOME IMAGE URL"}} />-->
+      </div>
+      <!-- 6) Prepopulate the input field with your name via the "value" attribute -->
+      <!--METHOD 1-->
+      <!--<input type="text" v-model='my_name'/>-->
+      <!--METHOD 2-->
+      <input type="text" v-bind:value='my_name'/>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header> 
+      <h1>Vue Dynamic Styling</h1>
+    </header>
+    <section id="styling">
+      <!--
+      <div
+         class="demo" 
+        Inline styles are not common because they overwrite any CSS in the page ...it can be done but not recomended>
+        :style="{borderColor: boxASelected ? '#FF0000' : '#ccc' }" 
+        @click="boxSelected('A')">
+        </div>-->
+      <!-- EXAMPLE OF SYLING WITH CSS AND TERNARY -->
+      <!-- : === v-bind -->
+      <div  
+        :class="boxASelected ? 'demo active' : 'demo'" 
+        @click="boxSelected('A')"
+      ></div>
+      <!-- EXAMPLE OF SYLING just with Vuejs with computed property-->
+      <!-- With multiple classes we can also use arrays here is the syntax-->
+      <!-- :class="['demo', {active: boxBSelected}]"-->
+      <!-- @click="boxSelected('B')"-->
+      <div 
+        class="demo"
+        :class="boxBClasses"
+        @click="boxSelected('B')"></div>
+      <!-- EXAMPLE OF SYLING with Vuejs and ternary logic in html (not the best) --->
+      <div 
+        class="demo" 
+        :style="{borderColor: boxCSelected ? '#FF0000' : '#ccc' }"
+        @click="boxSelected('C')"></div>
+        <!-- EXAMPLE OF Dynamic SYLING with Vuejs -->
+        <div 
+        class="demo" 
+        :style="{borderColor: boxDSelected ? '#FF0000' : '#ccc' }"
+        @click="boxSelected('D')"></div>
+    </section>
+  </body>
+</html>
