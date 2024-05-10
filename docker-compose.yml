@@ -1,0 +1,15 @@
+version: "3"
+services:
+  vuejs:
+    image: node:14
+    container_name: my-vue-cli-container
+    working_dir: /app
+    volumes:
+      - my-vue-app:/app
+    ports:
+      - "8080:8080"
+    command: ["npm", "run", "serve"]
+
+volumes:
+  vuejs:
+  my-vue-app:
